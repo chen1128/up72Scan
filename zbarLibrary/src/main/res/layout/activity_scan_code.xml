@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/capture_containter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+   >
+
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="true"
+            android:fitsSystemWindows="true" />
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/scan_mask">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+
+            <ImageView
+                android:id="@+id/top_mask"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:alpha="0.5"
+                android:onClick="btn"
+                android:layout_marginRight="36dp"
+                android:layout_marginEnd="36dp"
+                android:src="@drawable/s_light" />
+
+            <ImageView
+                android:id="@+id/top_openpicture"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:alpha="0.5"
+                android:onClick="btn"
+                android:layout_marginLeft="36dp"
+                android:layout_marginStart="36dp"
+                android:layout_toRightOf="@+id/top_mask"
+                android:layout_toEndOf="@+id/top_mask"
+                android:src="@drawable/s_img" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/capture_crop_layout"
+        android:layout_width="235dp"
+        android:layout_height="235dp"
+        android:layout_below="@id/rl_title"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/capture"
+        >
+
+        <SurfaceView
+            android:id="@+id/capture_preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+           />
+
+
+        <ImageView
+            android:id="@+id/capture_scan_line"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/kakalib_scan_ray"
+             />
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/bottom_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/capture_crop_layout"
+        android:background="@drawable/scan_mask"
+         />
+
+
+
+    <ImageView
+        android:id="@+id/left_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_mask"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/rl_title"
+        android:layout_toLeftOf="@id/capture_crop_layout"
+        android:layout_toStartOf="@id/capture_crop_layout"
+        android:background="@drawable/scan_mask"
+         />
+
+
+    <ImageView
+        android:id="@+id/right_mask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_mask"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/rl_title"
+        android:layout_toRightOf="@id/capture_crop_layout"
+        android:layout_toEndOf="@+id/capture_crop_layout"
+        android:background="@drawable/scan_mask"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/capture_crop_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:text="请将二维码/条形码图片对准扫描框"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+</RelativeLayout>
